@@ -1,0 +1,48 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use '../theme_provider' as theme;
+@use 'typography' as typography;
+@use '../../../styles/theme-provider/core/resets/button' as button;
+
+* {
+  box-sizing: border-box;
+  font-family: Lato, Helvetica, Arial, sans-serif, -apple-system;
+}
+
+html {
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @include typography.text-plain;
+  min-height: 100%;
+  background: theme.$color-tagline;
+  color: theme.$color-summer-night;
+  font-family: Lato, Helvetica, Arial, sans-serif, -apple-system;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  @include button.reset-buttons-styles;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+@include theme.mq(lg) {
+  body {
+    position: relative;
+  }
+}
