@@ -2,6 +2,9 @@
  * Public API Surface of ui
  */
 
-export * from './lib/ui.service';
-export * from './lib/ui.component';
-export * from './lib/ui.module';
+export const t = true;
+
+export * from './lib/components/header/header.component';
+export * from './lib/components/header/header.module';
+export * from './lib/components/footer/footer.component';
+export * from './lib/components/footer/footer.module';

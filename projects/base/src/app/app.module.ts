@@ -9,11 +9,12 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from "@ngrx/effects";
 import { AppEffects } from "./app.effects";
 import { CounterComponent } from './views/counter/counter.component';
+import { FooterModule, HeaderModule } from 'ngx-neo-ui';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,9 @@ import { CounterComponent } from './views/counter/counter.component';
       metaReducers
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([AppEffects])
+    EffectsModule.forRoot([AppEffects]),
+    HeaderModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
