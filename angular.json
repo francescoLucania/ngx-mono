@@ -39,8 +39,16 @@
             "tsConfig": "projects/base/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/base/src/favicon.ico",
-              "projects/base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/base/src/",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/base/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/base/src/styles.scss"
@@ -102,8 +110,16 @@
             "tsConfig": "projects/base/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/base/src/favicon.ico",
-              "projects/base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/base/src/",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/base/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "projects/base/src/styles.scss"
