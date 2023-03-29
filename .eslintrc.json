@@ -1,10 +1,7 @@
 {
   "root": true,
   "ignorePatterns": [
-    "dist",
-    ".angular",
-    ".vscode",
-    "projects/**/*",
+    "projects/**/*.spec.ts",
     "test.ts",
     "main.ts",
     "polyfills.ts",
@@ -21,7 +18,7 @@
   "extends": ["prettier"],
   "overrides": [
     {
-      "files": ["./src/app/**/*.ts"],
+      "files": ["projects/**/*.ts"],
       "parserOptions": {
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
@@ -37,7 +34,6 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "lk",
             "style": "camelCase"
           }
         ],
@@ -45,7 +41,6 @@
           "error",
           {
             "type": "element",
-            "prefix": "lk",
             "style": "kebab-case"
           }
         ],
@@ -61,7 +56,6 @@
         "@angular-eslint/use-lifecycle-interface": "error",
         "@angular-eslint/use-pipe-transform-interface": "error",
 
-        "@typescript-eslint/no-misused-promises": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
         "@typescript-eslint/restrict-template-expressions": "off",
         "@typescript-eslint/no-unsafe-return": "off",
@@ -176,7 +170,7 @@
             "ignoreTemplateLiterals": true,
             "ignoreComments": true,
             "ignorePattern": "^import\\s.+\\sfrom\\s.+;$",
-            "code": 110
+            "code": 120
           }
         ],
         "new-parens": "error",

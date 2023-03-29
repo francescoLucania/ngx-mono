@@ -33,18 +33,22 @@
             "outputPath": "dist/base",
             "index": "projects/base/src/index.html",
             "main": "projects/base/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/base/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/base/src/favicon.ico",
-              "projects/base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/base/src/",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/base/src/assets",
+                "output": "assets"
+              }
             ],
-            "styles": [
-              "projects/base/src/styles.scss"
-            ],
+            "styles": ["projects/base/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -95,19 +99,22 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/base/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/base/src/favicon.ico",
-              "projects/base/src/assets"
+              {
+                "glob": "**/favicon.ico",
+                "input": "projects/base/src/",
+                "output": ""
+              },
+              {
+                "glob": "**/*",
+                "input": "projects/base/src/assets",
+                "output": "assets"
+              }
             ],
-            "styles": [
-              "projects/base/src/styles.scss"
-            ],
+            "styles": ["projects/base/src/styles.scss"],
             "scripts": []
           }
         },
@@ -144,10 +151,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/ui/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
+            "polyfills": ["zone.js", "zone.js/testing"]
           }
         }
       }

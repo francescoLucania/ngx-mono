@@ -21,13 +21,7 @@
     "strictContextGenerics": true,
     "strictLiteralTypes": true
   },
-  "files": [
-    "src/main.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "**/*.stories.*"
-  ]
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": ["**/*.stories.*"]
 }

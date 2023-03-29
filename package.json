@@ -16,21 +16,6 @@
     "lib-watch": "ng build ui --watch",
     "ui-build:prod": "ng build ui && npm run cp-lib-assets"
   },
-  "lint-staged": {
-    "*.{json,html,scss}": [
-      "prettier --write"
-    ],
-    "*.{js,ts}": [
-      "prettier --write",
-      "eslint --fix --cache",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npx lint-staged"
-    }
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^15.2.0",
@@ -41,12 +26,13 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@babel/eslint-parser": "^7.21.3",
     "@ngrx/effects": "^15.4.0",
     "@ngrx/store": "^15.4.0",
     "@ngrx/store-devtools": "^15.4.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
-    "ngx-neo-ui": "^0.0.2",
+    "ngx-neo-ui": "^0.0.3",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -79,8 +65,12 @@
     "babel-loader": "^8.3.0",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-storybook": "^0.6.11",
-    "husky": "^8.0.3",
+    "husky": "^4.3.8",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
@@ -91,5 +81,20 @@
     "ng-packagr": "^15.2.2",
     "prettier": "2.8.4",
     "typescript": "~4.9.4"
+  },
+  "lint-staged": {
+    "*.{json,html,scss}": [
+      "prettier --write ./projects"
+    ],
+    "*.{js,ts}": [
+      "prettier --write ./projects",
+      "eslint --fix --cache",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
   }
 }
