@@ -102,18 +102,7 @@
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/base/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              {
-                "glob": "**/favicon.ico",
-                "input": "projects/base/src/",
-                "output": ""
-              },
-              {
-                "glob": "**/*",
-                "input": "projects/base/src/assets",
-                "output": "assets"
-              }
-            ],
+            "assets": ["projects/base/src/favicon.ico", "projects/base/src/assets"],
             "styles": ["projects/base/src/styles.scss"],
             "scripts": []
           }
