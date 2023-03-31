@@ -1,3 +1,5 @@
+@use 'node_modules/ngx-neo-ui/lib/assets/styles/theme-provider/theme_provider' as theme;
+
 .app {
   display: grid;
   grid-template-areas:
@@ -15,6 +17,12 @@ lib-header {
 
 main {
   grid-area: main;
+  display: flex;
+  padding-top: 80px;
+
+  @include theme.mq(md) {
+    padding-top: 128px;
+  }
 }
 
 lib-footer {
