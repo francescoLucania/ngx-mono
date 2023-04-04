@@ -1,0 +1,23 @@
+$colorBase: #121314;
+$colorLighte: rgba(#121314, 0.8);
+$colorLighter: rgba(#121314, 0.6);
+$colorLightest: rgba(#121314, 0.4);
+
+$colorBrand: #5409ff;
+$colorSound: #9280bc;
+$bgColorMode: #e7e7e7;
+
+$colorError: red;
+
+:root {
+  --colorBase: #{$colorBase};
+  --colorLighte: #{$colorLighte};
+  --colorLighter: #{$colorLighter};
+  --colorLightest: #{$colorLightest};
+
+  --colorBrand: #{$colorBrand};
+  --colorSound: #{$colorSound};
+  --bgColorMode: #{$bgColorMode};
+
+  --colorError: #{$colorError};
+}

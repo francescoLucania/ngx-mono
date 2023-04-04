@@ -1,1 +1,42 @@
-<p>header works!</p>
+<header class="site-header" [class.site-header--scroll-mod]="scrolled">
+  <div class="container">
+    <div class="site-header__grid">
+      <a [routerLink]="['/home']" class="site-header__logo">
+        <img src="../../assets/img/logo.jpg" alt="francescolucania.com" />
+      </a>
+
+      <nav class="site-header__navigate">
+        <ng-container [ngTemplateOutlet]="menu"></ng-container>
+      </nav>
+
+      <label for="check" class="menu-button">
+        <input type="checkbox" id="check" [checked]="mobileMenuState" (change)="changeMenu()" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+  </div>
+
+  <div
+    class="mobile-menu-fade"
+    [class.is-active]="mobileMenuState"
+    [class.is-close]="mobileMenuStateClose"
+    (click)="changeMenu()"></div>
+
+  <div class="mobile-menu" [class.is-active]="mobileMenuState" [class.is-close]="mobileMenuStateClose">
+    <div class="mobile-menu__box">
+      <ng-container [ngTemplateOutlet]="menu"></ng-container>
+    </div>
+  </div>
+</header>
+
+<ng-template #menu>
+  <ol class="site-header__navigate-list">
+    <li *ngFor="let item of navigate" class="site-header__navigate-list-item">
+      <a [routerLink]="item.uri" [routerLinkActive]="'is-active'"
+        ><span>{{ item.name }}</span></a
+      >
+    </li>
+  </ol>
+</ng-template>

@@ -1,0 +1,35 @@
+@use '../../assets/styles/theme-provider/core/resets/button' as button;
+
+button {
+  @include button.reset-buttons-styles;
+  padding: 16px 32px;
+  font-size: 16px;
+  line-height: 1;
+  background-color: var(--colorBase);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: var(--colorBrand);
+  }
+
+  &:disabled {
+    opacity: 0.8;
+  }
+
+  &--strong {
+    font-weight: 700;
+  }
+
+  &--theme-secondary {
+  }
+
+  &--size-small {
+  }
+
+  &--size-big {
+    font-size: 18px;
+  }
+}
