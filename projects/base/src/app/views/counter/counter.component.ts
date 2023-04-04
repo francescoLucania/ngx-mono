@@ -13,6 +13,23 @@ export class CounterComponent {
   public disableCounter$ = this.count$.pipe(map(value => value <= 0));
   public updatedAt$ = this.store.select(updatedAtSelector);
 
+  public person = {
+    $implicit: 'name',
+  }
+
+  public person2 = {
+    name: 'name',
+    $implicit: 'surname',
+  }
+
+
+  public person3 = {
+    name: 'name',
+    surname: 'surname',
+    $implicit: 'secondName'
+  }
+
+
   constructor(private store: Store) {}
 
   public increase() {

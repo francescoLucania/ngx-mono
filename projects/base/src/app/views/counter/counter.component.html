@@ -1,8 +1,51 @@
-<div>
-  <button type="button" (click)="increase()">+1</button>
-  <button [disabled]="disableCounter$ | async" type="button" (click)="decrease()">-1</button>
-  <div>Итого = {{ count$ | async }}</div>
-  <div *ngIf="updatedAt$ | async as updatedAt">
-    Последнее обновление = {{ updatedAt | date : 'HH:mm:ss dd/MM/yyyy' }}
+<div class='container'>
+
+  <div>
+    <button type="button" (click)="increase()">+1</button>
+    <button [disabled]="disableCounter$ | async" type="button" (click)="decrease()">-1</button>
+    <div>Итого = {{ count$ | async }}</div>
+    <div *ngIf="updatedAt$ | async as updatedAt">
+      Последнее обновление = {{ updatedAt | date : 'HH:mm:ss dd/MM/yyyy' }}
+    </div>
   </div>
+
+  <br><br><br><br><br><br>
+
+  <input type='text' baseOnlyNumber>
+
+  <br><br><br><br>
+
+  <div [baseGenerateInputs]="5"></div>
+
+  <br><br><br><br>
+
+  <div> baseGenerateInputs3 </div>
+
+  <div *baseGenerateInputs3="6; let num; let i = index">
+    {{num}}
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <ng-container *ngTemplateOutlet='name; context: person'></ng-container>
+  <br>
+  <ng-container *ngTemplateOutlet='name2; context: person2'></ng-container>
+  <br>
+  <ng-container *ngTemplateOutlet='name3; context: person3'></ng-container>
+  <br>
+
+  <ng-template #name let-name>
+    {{name}}
+  </ng-template>
+
+  <ng-template #name2 let-name let-surname>
+    {{name}} {{surname}}
+  </ng-template>
+
+  <ng-template #name3 let-name let-surname let-secondName>
+    {{name}} {{surname}} {{secondName}}
+  </ng-template>
+
 </div>
