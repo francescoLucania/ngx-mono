@@ -9,7 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { CounterComponent } from './views/counter/counter.component';
-import { FooterModule, HeaderModule, ButtonModule } from 'ngx-neo-ui';
+import { FooterModule, HeaderModule, ButtonModule, ModalModule } from 'ngx-neo-ui';
 import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
@@ -25,6 +25,7 @@ import { HomeComponent } from './views/home/home.component';
     HeaderModule,
     FooterModule,
     ButtonModule,
+    ModalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

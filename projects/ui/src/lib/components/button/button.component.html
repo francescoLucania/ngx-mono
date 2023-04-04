@@ -1,5 +1,5 @@
 <ng-container *ngIf="!link; else linkTemplate">
-  <button [type]="buttonType" [disabled]="disabled" (click)="click.emit($event)">
+  <button [type]="buttonType" [disabled]="disabled">
     <ng-container *ngIf="!showLoader" [ngTemplateOutlet]="content"></ng-container>
   </button>
 </ng-container>

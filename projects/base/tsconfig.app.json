@@ -5,6 +5,7 @@
     "types": []
   },
   "angularCompilerOptions": {
+    "strictPropertyInitialization":false,
     "compilationMode": "full",
     "enableIvy": true,
     "fullTemplateTypeCheck": true,

@@ -16,6 +16,4 @@ export class ButtonComponent {
 
   @Input() public link = '';
   @Input() public target: '_blank' | '_self' | '_parent' | '_top' = '_self';
-
-  @Output() public click = new EventEmitter<Event>();
 }
