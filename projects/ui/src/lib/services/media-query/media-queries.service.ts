@@ -21,6 +21,9 @@ export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesInterface = {
   providedIn: 'root',
 })
 export class MediaQueriesService {
+
+  private config = MEDIA_QUERY_CONFIG_BASE;
+
   private _deviceType$ = new BehaviorSubject<IDeviceType | null>(null);
   public deviceType$ = this._deviceType$.asObservable();
 
@@ -40,8 +43,8 @@ export class MediaQueriesService {
   };
 
   // @ts-ignore
-  constructor(@Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesInterface) {
-    console.log('config ', config);
+  constructor() {
+    console.log('config ', this.config);
     this._windowResize$ = fromEvent(window, 'resize');
     this.init();
     this._windowResize$.pipe(debounceTime(800)).subscribe(() => this.init());
