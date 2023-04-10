@@ -15,6 +15,13 @@
       "browserTarget": "angular-cli:build"
     }
   },
+  "assets": [
+    {
+      "glob": "**/*",
+      "input": "projects/ui/src/lib/assets",
+      "output": "/assets/"
+    }
+  ],
   "projects": {
     "base": {
       "projectType": "application",
