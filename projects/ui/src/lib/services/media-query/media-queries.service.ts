@@ -1,9 +1,11 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { BehaviorSubject, fromEvent, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { IDeviceType, IMediaQueriesInterface } from './models/media-queries.interface';
 
-const GET_MEDIA_QUERY_CONFIG = {
+export const MEDIA_QUERY_CONFIG = new InjectionToken<IMediaQueriesInterface>('mediaQueriesConfig');
+
+export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesInterface = {
   enable: {
     mq: true,
     mqDevice: false,
@@ -13,7 +15,7 @@ const GET_MEDIA_QUERY_CONFIG = {
     ['md', 768], // min-width
     ['lg', 1140], // min-width
   ],
-}
+};
 
 @Injectable({
   providedIn: 'root',
@@ -26,8 +28,6 @@ export class MediaQueriesService {
 
   private _windowResize$: Observable<Event>;
 
-  private _config: IMediaQueriesInterface;
-
   private _mq = {
     sm: null,
     md: null,
@@ -39,8 +39,9 @@ export class MediaQueriesService {
     lg: null,
   };
 
-  constructor() {
-    this._config = GET_MEDIA_QUERY_CONFIG;
+  // @ts-ignore
+  constructor(@Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesInterface) {
+    console.log('config ', config);
     this._windowResize$ = fromEvent(window, 'resize');
     this.init();
     this._windowResize$.pipe(debounceTime(800)).subscribe(() => this.init());
@@ -55,7 +56,7 @@ export class MediaQueriesService {
   }
 
   private createMq(array: any[]): void {
-    const mqDevice = this._config.enable.mqDevice ? 'device-' : '';
+    const mqDevice = this.config.enable.mqDevice ? 'device-' : '';
 
     array.forEach((element: any, index: any) => {
       const mqRange = index === 0 ? 'max' : 'min';
@@ -70,7 +71,7 @@ export class MediaQueriesService {
 
   public getType(): string {
     // @ts-ignore
-    this.createMq(this._config.mqBreakpoints);
+    this.createMq(this.config.mqBreakpoints);
 
     let displayWidthType = '';
     // @ts-ignore
@@ -91,7 +92,7 @@ export class MediaQueriesService {
 
   public getDeviceSizeData(): { size: string; mq: any; width: number } {
     // @ts-ignore
-    this.createMq(this._config.mqBreakpoints);
+    this.createMq(this.config.mqBreakpoints);
 
     let resultSize = '';
 

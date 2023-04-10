@@ -5,11 +5,7 @@ import { OpenModalTemplateRefDirective } from './services/directives/open-modal-
 import { BaseModalComponent } from './components/base-modal/base-modal.component';
 
 @NgModule({
-  declarations: [
-    ModalComponent,
-    OpenModalTemplateRefDirective,
-    BaseModalComponent,
-  ],
+  declarations: [ModalComponent, OpenModalTemplateRefDirective, BaseModalComponent],
   imports: [CommonModule],
   exports: [ModalComponent, BaseModalComponent, OpenModalTemplateRefDirective],
 })

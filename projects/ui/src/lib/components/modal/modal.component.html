@@ -1,8 +1,4 @@
-<div
-  class="modal"
-  [ngClass]="{ modal_open: isOpen, modal_scroll: scrollState }"
-  tabindex="0"
-  #modalContainer>
+<div class="modal" [ngClass]="{ modal_open: isOpen, modal_scroll: scrollState }" tabindex="0" #modalContainer>
   <div
     class="modal__fade"
     [ngClass]="{ modal__fade_close: closeButton && backgroundClick }"

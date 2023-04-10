@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { countSelector, decrease, increase, updatedAtSelector } from './reducers/counter';
 import { map } from 'rxjs';
 import { IHeaderNavigate } from '../../../ui/src/lib/components/header/models/navigate';
+import { MediaQueriesService } from 'ui';
 
 @Component({
   selector: 'base-root',
@@ -21,7 +22,9 @@ export class AppComponent {
     { name: 'Contacts', uri: 'Contacts' },
   ];
 
-  constructor(private store: Store) {}
+  constructor(private store: Store, private mq: MediaQueriesService) {
+    console.log('this.mq.getDeviceSizeData();', this.mq.getDeviceSizeData());
+  }
 
   public increase() {
     this.store.dispatch(increase());

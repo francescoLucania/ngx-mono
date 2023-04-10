@@ -1,11 +1,4 @@
-import {
-  Directive,
-  NgModuleRef,
-  ElementRef,
-  HostListener,
-  Input,
-  TemplateRef,
-} from '@angular/core';
+import { Directive, NgModuleRef, ElementRef, HostListener, Input, TemplateRef } from '@angular/core';
 import { ModalService } from '../modal.service';
 import { BaseModalComponent } from '../../components/base-modal/base-modal.component';
 
@@ -32,10 +25,7 @@ export class OpenModalTemplateRefDirective {
   @Input() public modalTitle: string;
   @Input() public closeHandler: () => {};
 
-  constructor(
-    private modalService: ModalService,
-    private moduleRef: NgModuleRef<any>,
-  ) {}
+  constructor(private modalService: ModalService, private moduleRef: NgModuleRef<any>) {}
 
   @HostListener('click', ['$event']) private onClick(): void {
     const context = {
