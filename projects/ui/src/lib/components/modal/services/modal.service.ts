@@ -12,11 +12,7 @@ export class ModalService {
   private _modalState$ = new Subject<IModalDataInterface | null>();
   constructor() {}
 
-  public open(
-    component: Type<any>,
-    moduleRef?: NgModuleRef<any>,
-    context?: any,
-  ): void {
+  public open(component: Type<any>, moduleRef?: NgModuleRef<any>, context?: any): void {
     const baseContext = {
       closable: true,
       backgroundClick: true,

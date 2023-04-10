@@ -39,8 +39,7 @@ export class ModalComponent implements OnInit {
     private readonly modalService: ModalService,
     private changeDetector: ChangeDetectorRef,
     private mediaQueriesService: MediaQueriesService,
-  ) {
-  }
+  ) {}
 
   @HostListener('window:keyup', ['$event.keyCode'])
   private keyClose(code: number) {
@@ -101,11 +100,10 @@ export class ModalComponent implements OnInit {
     }
 
     this.checkHeightModalBody(this.mediaQueriesService.getType());
-    this.mediaQueriesService.deviceType$
-      .subscribe(data => {
-        this.checkHeightModalBody(data?.deviceType);
-        this.changeDetector.markForCheck();
-      });
+    this.mediaQueriesService.deviceType$.subscribe(data => {
+      this.checkHeightModalBody(data?.deviceType);
+      this.changeDetector.markForCheck();
+    });
   }
 
   public close(force = false): void {
