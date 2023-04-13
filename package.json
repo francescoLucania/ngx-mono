@@ -1,6 +1,6 @@
 {
   "name": "ngx-mono",
-  "version": "0.0.0",
+  "version": "0.0.4.beta",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -32,7 +32,7 @@
     "@ngrx/store-devtools": "^15.4.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
-    "ngx-neo-ui": "^0.0.4",
+    "ngx-neo-ui": "^0.0.5-beta",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

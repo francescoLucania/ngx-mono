@@ -11,9 +11,7 @@ import { AppEffects } from './app.effects';
 import { CounterComponent } from './views/counter/counter.component';
 import { FooterModule, HeaderModule, ButtonModule, ModalModule } from 'ngx-neo-ui';
 import { HomeComponent } from './views/home/home.component';
-import { MEDIA_QUERY_CONFIG } from '../../../ui/src/lib/services/media-query/media-queries.service';
-import { IMediaQueriesInterface } from '../../../ui/src/lib/services/media-query/models/media-queries.interface';
-import { MediaQueriesService } from 'ui';
+import { IMediaQueriesInterface, MEDIA_QUERY_CONFIG } from 'ui';
 
 const mediaQueriesConfig: IMediaQueriesInterface = {
   enable: {

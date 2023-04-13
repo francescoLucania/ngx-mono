@@ -15,3 +15,4 @@ export * from './lib/components/modal/components/base-modal/base-modal.component
 export * from './lib/components/modal/services/directives/open-modal-template-ref.directive';
 export * from './lib/components/modal/modal.module';
 export * from './lib/services/media-query/media-queries.service';
+export * from './lib/services/media-query/models/media-queries.interface';
