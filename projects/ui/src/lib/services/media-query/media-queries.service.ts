@@ -1,11 +1,14 @@
-import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { BehaviorSubject, fromEvent, Observable } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import { IDeviceType, IMediaQueriesInterface } from './models/media-queries.interface';
+import {
+  IMediaQueriesBreakpoint,
+  IMediaQueriesDeviceInfo,
+  IMediaQueriesParams,
+  MEDIA_QUERY_CONFIG, TMediaQueriesBreakpoint,
+} from './models/media-queries.interface';
 
-export const MEDIA_QUERY_CONFIG = new InjectionToken<IMediaQueriesInterface>('mediaQueriesConfig');
-
-export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesInterface = {
+export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesParams = {
   enable: {
     mq: true,
     mqDevice: false,
@@ -21,30 +24,20 @@ export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesInterface = {
   providedIn: 'root',
 })
 export class MediaQueriesService {
-
-  private config = MEDIA_QUERY_CONFIG_BASE;
-
-  private _deviceType$ = new BehaviorSubject<IDeviceType | null>(null);
+  private _deviceType$ = new BehaviorSubject<IMediaQueriesDeviceInfo | null>(null);
   public deviceType$ = this._deviceType$.asObservable();
 
   private _deviceTypeParams: any;
 
   private _windowResize$: Observable<Event>;
 
-  private _mq = {
-    sm: null,
-    md: null,
-    lg: null,
-  };
-  private _mqParams = {
-    sm: null,
-    md: null,
-    lg: null,
-  };
+  private _mq: {[key: string]: IMediaQueriesBreakpoint} = {};
+  private _mqParams = {};
 
-  // @ts-ignore
-  constructor() {
-    console.log('config ', this.config);
+  constructor(@Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams) {
+    if (!this.config) {
+      this.config = MEDIA_QUERY_CONFIG_BASE;
+    }
     this._windowResize$ = fromEvent(window, 'resize');
     this.init();
     this._windowResize$.pipe(debounceTime(800)).subscribe(() => this.init());
@@ -58,14 +51,13 @@ export class MediaQueriesService {
     this._deviceType$.next(this._deviceTypeParams);
   }
 
-  private createMq(array: any[]): void {
+  private createMq(array: TMediaQueriesBreakpoint[] | undefined): void {
     const mqDevice = this.config.enable.mqDevice ? 'device-' : '';
 
-    array.forEach((element: any, index: any) => {
+    array?.forEach((element, index: number) => {
       const mqRange = index === 0 ? 'max' : 'min';
-
-      // @ts-ignore
-      this._mq[element[0]] = {
+      const key = element[0];
+      this._mq[key] = {
         int: element[1],
         str: '(' + mqRange + '-' + mqDevice + 'width: ' + element[1] + 'px)',
       };
@@ -73,28 +65,18 @@ export class MediaQueriesService {
   }
 
   public getType(): string {
-    // @ts-ignore
     this.createMq(this.config.mqBreakpoints);
-
     let displayWidthType = '';
-    // @ts-ignore
-    if (window.matchMedia(this._mq.sm.str).matches) {
-      displayWidthType = 'sm';
-    }
-    // @ts-ignore
-    if (window.matchMedia(this._mq.md.str).matches) {
-      displayWidthType = 'md';
-    }
-    // @ts-ignore
-    if (window.matchMedia(this._mq.lg.str).matches) {
-      displayWidthType = 'lg';
-    }
 
+    for (const item in this._mq) {
+      if (window.matchMedia(this._mq[item].str).matches) {
+        displayWidthType = item;
+      }
+    }
     return displayWidthType;
   }
 
   public getDeviceSizeData(): { size: string; mq: any; width: number } {
-    // @ts-ignore
     this.createMq(this.config.mqBreakpoints);
 
     let resultSize = '';

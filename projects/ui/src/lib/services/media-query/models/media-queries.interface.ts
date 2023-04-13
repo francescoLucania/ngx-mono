@@ -1,21 +1,28 @@
-export interface IMediaQueriesInterface {
+import { InjectionToken } from '@angular/core';
+
+export const MEDIA_QUERY_CONFIG = new InjectionToken<IMediaQueriesParams>('mediaQueriesConfig');
+
+export interface IMediaQueriesParams {
   enable: {
     mq: boolean;
     mqDevice: boolean;
   };
-  mqBreakpoints?: ((string | number)[] | null)[] | null;
+  mqBreakpoints?: TMediaQueriesBreakpoint[];
 }
 
-export interface IDeviceType {
-  deviceSize: {
-    mq: {
-      sm: boolean;
-      md: boolean;
-      lg: boolean;
-    };
-    width: number;
-  };
-  deviceType: TDeviceType;
+export type TMediaQueriesBreakpoint = [string, number];
+
+export interface IMediaQueriesDeviceInfo {
+  "deviceType": string,
+  "deviceSize": {
+    "size": string,
+    "mq": {
+      "sm": false,
+      "md": true,
+      "lg": false
+    },
+    "width": number
+  }
 }
 
-export type TDeviceType = 'sm' | 'md' | 'lg';
+export interface IMediaQueriesBreakpoint { int: number, str: string }
