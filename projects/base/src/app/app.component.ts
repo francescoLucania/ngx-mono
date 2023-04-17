@@ -7,7 +7,6 @@ import { IHeaderNavigate } from '../../../ui/src/lib/components/header/models/na
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   public navigate: IHeaderNavigate[] = [
     { name: 'Home', uri: '' },
     { name: 'Styles', uri: 'components' },

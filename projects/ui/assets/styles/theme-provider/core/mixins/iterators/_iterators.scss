@@ -6,7 +6,7 @@
 @mixin eachMedia($cssProperty, $values) {
   @if (funcs.isMap($values)) {
     @each $property, $value in $values {
-      @if $property == nth(map.keys(config.$breakpoints), 1) {
+      @if $property == nth(map.keys(config.$mq-breakpoints), 1) {
         #{$cssProperty}: $value;
       } @else {
         @include media.mq($property) {

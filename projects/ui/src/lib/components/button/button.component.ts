@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'lib-button',
+  selector: 'ui-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
+  @Input() public label: string;
   @Input() public theme: 'base' | 'secondary' = 'base';
-  @Input() public size: 'base' | 'small' | 'big' = 'base';
+  @Input() public size: 'base' | 'small' | 'large' = 'base';
   @Input() public showLoader = false;
 
   @Input() public disabled = false;

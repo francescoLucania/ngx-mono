@@ -1,10 +1,11 @@
 @use '../../../../assets/styles/theme-provider/core/resets/button' as button;
 
-button {
+.ui-button {
   @include button.reset-buttons-styles;
-  padding: 16px 32px;
+  padding: 14px 30px;
   font-size: 16px;
   line-height: 1;
+  border: 2px solid var(--colorBase);
   background-color: var(--colorBase);
   color: #fff;
   text-decoration: none;
@@ -12,6 +13,7 @@ button {
   transition: all 0.2s;
 
   &:hover {
+    border-color: var(--colorBrand);
     background: var(--colorBrand);
   }
 
@@ -24,12 +26,20 @@ button {
   }
 
   &--theme-secondary {
+    background-color: transparent;
+    color: var(--colorBase);
+
+    &:hover {
+      color: #fff;
+    }
   }
 
   &--size-small {
+    padding: 10px 24px;
+    font-size: 14px;
   }
 
-  &--size-big {
+  &--size-large {
     font-size: 18px;
   }
 }

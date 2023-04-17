@@ -1,15 +1,17 @@
 <ng-container *ngIf="!link; else linkTemplate">
-  <button [type]="buttonType" [disabled]="disabled">
-    <ng-container *ngIf="!showLoader" [ngTemplateOutlet]="content"></ng-container>
+  <button
+    class="ui-button"
+    [class.ui-button--theme-secondary]="theme === 'secondary'"
+    [class.ui-button--size-small]="size === 'small'"
+    [class.ui-button--size-large]="size === 'large'"
+    [type]="buttonType"
+    [disabled]="disabled">
+    {{ label }}
   </button>
 </ng-container>
 
 <ng-template #linkTemplate>
   <a [href]="link" [target]="target">
-    <ng-container [ngTemplateOutlet]="content"></ng-container>
+    {{ label }}
   </a>
-</ng-template>
-
-<ng-template #content>
-  <ng-content></ng-content>
 </ng-template>
