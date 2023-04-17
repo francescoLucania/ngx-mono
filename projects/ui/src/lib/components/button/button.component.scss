@@ -1,4 +1,4 @@
-@use '../../assets/styles/theme-provider/core/resets/button' as button;
+@use '../../../../assets/styles/theme-provider/core/resets/button' as button;
 
 button {
   @include button.reset-buttons-styles;
