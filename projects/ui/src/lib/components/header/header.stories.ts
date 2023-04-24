@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from 'ui';
 
 export default {
-  title: 'lib-header',
+  title: 'neo-ui-header',
   component: HeaderComponent,
   decorators: [
     moduleMetadata({
@@ -44,5 +44,3 @@ LoggedIn.args = {};
 
 export const LoggedOut = Template.bind({});
 LoggedOut.args = {};
-
-console.log('olololo');

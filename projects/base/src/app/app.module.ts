@@ -12,10 +12,9 @@ import { CounterComponent } from './views/counter/counter.component';
 import {
   FooterModule,
   HeaderModule,
-  ButtonModule,
   ModalModule,
   IMediaQueriesParams,
-  MEDIA_QUERY_CONFIG,
+  MEDIA_QUERY_CONFIG, ButtonModule,
 } from 'ngx-neo-ui';
 import { HomeComponent } from './views/home/home.component';
 

@@ -2,6 +2,7 @@
   "root": true,
   "ignorePatterns": [
     "projects/**/*.spec.ts",
+    "stories/",
     "test.ts",
     "main.ts",
     "polyfills.ts",

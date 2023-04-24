@@ -10,7 +10,7 @@
   min-height: 100vh;
 }
 
-lib-header {
+neo-ui-header {
   grid-area: header;
   height: content-box;
 }
@@ -25,7 +25,7 @@ main {
   }
 }
 
-lib-footer {
+neo-ui-footer {
   grid-area: footer;
   height: content-box;
 }

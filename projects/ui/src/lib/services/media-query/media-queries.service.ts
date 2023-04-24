@@ -5,7 +5,8 @@ import {
   IMediaQueriesBreakpoint,
   IMediaQueriesDeviceInfo,
   IMediaQueriesParams,
-  MEDIA_QUERY_CONFIG, TMediaQueriesBreakpoint,
+  MEDIA_QUERY_CONFIG,
+  TMediaQueriesBreakpoint,
 } from './models/media-queries.interface';
 
 export const MEDIA_QUERY_CONFIG_BASE: IMediaQueriesParams = {
@@ -31,7 +32,7 @@ export class MediaQueriesService {
 
   private _windowResize$: Observable<Event>;
 
-  private _mq: {[key: string]: IMediaQueriesBreakpoint} = {};
+  private _mq: { [key: string]: IMediaQueriesBreakpoint } = {};
   private _mqParams = {};
 
   constructor(@Optional() @Inject(MEDIA_QUERY_CONFIG) private config: IMediaQueriesParams) {

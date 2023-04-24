@@ -1,6 +1,6 @@
 @use '../../../../assets/styles/theme-provider/core/resets/button' as button;
 
-.ui-button {
+.neo-ui-button {
   @include button.reset-buttons-styles;
   padding: 14px 30px;
   font-size: 16px;
@@ -31,6 +31,17 @@
 
     &:hover {
       color: #fff;
+    }
+  }
+
+  &--theme-brand {
+    border-color: var(--colorBrand);
+    background-color: var(--colorBrand);
+    color: #fff;
+
+    &:hover {
+      background-color: transparent;
+      color: var(--colorBrand);
     }
   }
 

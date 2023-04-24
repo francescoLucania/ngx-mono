@@ -13,16 +13,19 @@ export interface IMediaQueriesParams {
 export type TMediaQueriesBreakpoint = [string, number];
 
 export interface IMediaQueriesDeviceInfo {
-  "deviceType": string,
-  "deviceSize": {
-    "size": string,
-    "mq": {
-      "sm": false,
-      "md": true,
-      "lg": false
-    },
-    "width": number
-  }
+  deviceType: string;
+  deviceSize: {
+    size: string;
+    mq: {
+      sm: false;
+      md: true;
+      lg: false;
+    };
+    width: number;
+  };
 }
 
-export interface IMediaQueriesBreakpoint { int: number, str: string }
+export interface IMediaQueriesBreakpoint {
+  int: number;
+  str: string;
+}

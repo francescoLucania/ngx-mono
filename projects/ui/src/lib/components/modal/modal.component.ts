@@ -13,7 +13,7 @@ import { IModalDataInterface } from './services/models';
 import { MediaQueriesService } from '../../services/media-query/media-queries.service';
 
 @Component({
-  selector: 'lib-modal',
+  selector: 'neo-ui-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

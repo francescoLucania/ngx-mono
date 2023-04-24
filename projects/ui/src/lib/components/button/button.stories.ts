@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from './button.component';
 
 export default {
-  title: 'lib-button',
+  title: 'neo-ui-button',
   component: ButtonComponent,
   decorators: [
     moduleMetadata({

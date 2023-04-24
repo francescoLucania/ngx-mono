@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-ui',
+  selector: 'neo-ui-ui',
   template: ` <p>ui works!</p> `,
   styles: [],
 })

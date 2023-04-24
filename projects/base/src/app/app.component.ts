@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IHeaderNavigate } from '../../../ui/src/lib/components/header/models/navigate';
+import { IHeaderNavigate } from 'ngx-neo-ui/lib/components/header/models/navigate';
 
 @Component({
   selector: 'base-root',

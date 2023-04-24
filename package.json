@@ -14,7 +14,8 @@
     "build-storybook": "npm run docs:json && build-storybook",
     "cp-lib-assets": "cross-env cpx \"./projects/ui/src/lib/assets/**/*\" \"./dist/ui/lib/assets\"",
     "lib-watch": "ng build ui --watch",
-    "ui-build:prod": "ng build ui"
+    "ui-build:prod": "ng build ui",
+    "npm-install": "npm install --legacy-peer-deps"
   },
   "private": true,
   "dependencies": {
@@ -32,7 +33,7 @@
     "@ngrx/store-devtools": "^15.4.0",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
-    "ngx-neo-ui": "^1.0.0",
+    "ngx-neo-ui": "^2.0.1",
     "normalize.css": "^8.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

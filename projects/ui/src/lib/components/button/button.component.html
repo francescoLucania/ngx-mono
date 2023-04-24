@@ -1,17 +1,36 @@
 <ng-container *ngIf="!link; else linkTemplate">
   <button
-    class="ui-button"
-    [class.ui-button--theme-secondary]="theme === 'secondary'"
-    [class.ui-button--size-small]="size === 'small'"
-    [class.ui-button--size-large]="size === 'large'"
+    class="neo-ui-button"
+    [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
+    [class.neo-ui-button--theme-brand]="theme === 'brand'"
+    [class.neo-ui-button--size-small]="size === 'small'"
+    [class.neo-ui-button--size-large]="size === 'large'"
     [type]="buttonType"
-    [disabled]="disabled">
-    {{ label }}
+    [disabled]="disabled"
+    [title]="title"
+    [attr.aria-label]='ariaLabel'
+    [attr.tabindex]='tabIndex'
+  >
+    <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </button>
 </ng-container>
 
 <ng-template #linkTemplate>
-  <a [href]="link" [target]="target">
-    {{ label }}
+  <a
+     class="neo-ui-button"
+     [href]="link"
+     [target]="target"
+     [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
+     [class.neo-ui-button--size-small]="size === 'small'"
+     [class.neo-ui-button--size-large]="size === 'large'"
+     [type]="buttonType"
+     [attr.aria-label]='ariaLabel'
+     [attr.tabindex]='tabIndex'
+  >
+    <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </a>
+</ng-template>
+
+<ng-template #contentRef>
+  <ng-content></ng-content>
 </ng-template>

@@ -2,7 +2,7 @@ import { Component, HostListener, Input, Renderer2 } from '@angular/core';
 import { IHeaderNavigate } from './models/navigate';
 
 @Component({
-  selector: 'lib-header',
+  selector: 'neo-ui-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
