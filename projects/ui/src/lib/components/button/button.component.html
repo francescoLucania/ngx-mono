@@ -8,25 +8,23 @@
     [type]="buttonType"
     [disabled]="disabled"
     [title]="title"
-    [attr.aria-label]='ariaLabel'
-    [attr.tabindex]='tabIndex'
-  >
+    [attr.aria-label]="ariaLabel"
+    [attr.tabindex]="tabIndex">
     <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </button>
 </ng-container>
 
 <ng-template #linkTemplate>
   <a
-     class="neo-ui-button"
-     [href]="link"
-     [target]="target"
-     [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
-     [class.neo-ui-button--size-small]="size === 'small'"
-     [class.neo-ui-button--size-large]="size === 'large'"
-     [type]="buttonType"
-     [attr.aria-label]='ariaLabel'
-     [attr.tabindex]='tabIndex'
-  >
+    class="neo-ui-button"
+    [href]="link"
+    [target]="target"
+    [class.neo-ui-button--theme-secondary]="theme === 'secondary'"
+    [class.neo-ui-button--size-small]="size === 'small'"
+    [class.neo-ui-button--size-large]="size === 'large'"
+    [type]="buttonType"
+    [attr.aria-label]="ariaLabel"
+    [attr.tabindex]="tabIndex">
     <ng-container *ngIf="label; else contentRef">{{ label }}</ng-container>
   </a>
 </ng-template>
