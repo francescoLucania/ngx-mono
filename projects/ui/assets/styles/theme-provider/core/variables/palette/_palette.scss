@@ -1,13 +1,16 @@
-$colorBase: #121314;
-$colorLighte: rgba(#121314, 0.8);
-$colorLighter: rgba(#121314, 0.6);
-$colorLightest: rgba(#121314, 0.4);
+$colorBase: #121314 !default;
+$colorLighte: rgba(#121314, 0.8) !default;
+$colorLighter: rgba(#121314, 0.6) !default;
+$colorLightest: rgba(#121314, 0.4) !default;
 
-$colorBrand: #5409ff;
-$colorSound: #9280bc;
-$bgColorMode: #e7e7e7;
+$colorBrand: #5409ff !default;
+$colorSound: #9280bc !default;
+$bgColorMode: #e7e7e7 !default;
 
-$colorError: red;
+$colorError: red !default;
+
+$accessibilityBorder: #9b3be5 !default;
+$accessibilityBackground: #fef0cc !default;
 
 :root {
   --colorBase: #{$colorBase};
@@ -18,6 +21,9 @@ $colorError: red;
   --colorBrand: #{$colorBrand};
   --colorSound: #{$colorSound};
   --bgColorMode: #{$bgColorMode};
+
+  --accessibilityBorder: #{$accessibilityBorder};
+  --accessibilityBackground: #{$accessibilityBackground};
 
   --colorError: #{$colorError};
 }

@@ -1,4 +1,5 @@
 @use '../../../../assets/styles/theme-provider/core/resets/button' as button;
+@use '../../../../assets/styles/theme-provider/theme_provider' as theme;
 
 .neo-ui-button {
   @include button.reset-buttons-styles;
@@ -11,6 +12,27 @@
   text-decoration: none;
   cursor: pointer;
   transition: all 0.2s;
+
+  &:focus-visible {
+    position: relative;
+    z-index: 2;
+    color: var(--colorBase);
+    outline: none;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: calc(100% + 5px);
+      transform: translate(-50%, -50%);
+      border: 3px solid var(--accessibilityBorder);
+      border-radius: 8px;
+      background: var(--accessibilityBackground);
+    }
+  }
 
   &:hover {
     border-color: var(--colorBrand);

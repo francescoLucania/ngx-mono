@@ -1,0 +1,56 @@
+@use '../../theme_provider' as theme;
+
+a {
+  letter-spacing: -0.02em;
+
+  &:not([class]) {
+    &:focus-visible {
+      position: relative;
+      display: inline-block;
+      outline: none;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: calc(100% + 5px);
+        transform: translate(-50%, -50%);
+        padding: 0 8px;
+        border: 3px solid var(--accessibilityBorder);
+        border-radius: 8px;
+        background: var(--accessibilityBackground);
+      }
+    }
+  }
+}
+
+.focus-visible-none {
+  outline: none;
+}
+
+.focus-visible {
+  &:focus-visible {
+    position: relative;
+    outline: none;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      z-index: -1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: calc(100% + 5px);
+      transform: translate(-50%, -50%);
+      padding: 0 8px;
+      border: 3px solid var(--accessibilityBorder);
+      border-radius: 8px;
+      background: var(--accessibilityBackground);
+    }
+  }
+}

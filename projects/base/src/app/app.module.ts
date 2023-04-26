@@ -9,13 +9,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { CounterComponent } from './views/counter/counter.component';
-import {
-  FooterModule,
-  HeaderModule,
-  ModalModule,
-  IMediaQueriesParams,
-  MEDIA_QUERY_CONFIG, ButtonModule,
-} from 'ngx-neo-ui';
+import { FooterModule, HeaderModule, ModalModule, IMediaQueriesParams, MEDIA_QUERY_CONFIG } from 'ngx-neo-ui';
+import { ButtonModule } from 'ui';
 import { HomeComponent } from './views/home/home.component';
 
 const mediaQueriesConfig: IMediaQueriesParams = {
