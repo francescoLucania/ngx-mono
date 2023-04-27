@@ -1,0 +1,32 @@
+<div class="ui-grid">
+  <div class="ui-grid__navigate"></div>
+
+  <div class="ui-grid__container" style="height: 1000px">
+    <div class="base-view">
+      <neo-ui-header [fullWidth]="true" [navigate]="navigate"></neo-ui-header>
+      <main class="ui-grid__main">
+        <section class="home">
+          <div class="home__content-box">
+            <h1 class="home__heading heading-h1">Ngx-neo-ui</h1>
+
+            <p class="mt-16">UI components for Angular</p>
+            <div class="mt-32">
+              <neo-ui-button
+                [theme]="'brand'"
+                [size]="'large'"
+                [openModalFromTemplate]="ipErrorModal"
+                [modalTitle]="'Заголовок'">
+                <span>Get started</span></neo-ui-button
+              >
+
+              <ng-template #ipErrorModal>
+                <div>эксперимент удался</div>
+              </ng-template>
+            </div>
+          </div>
+        </section>
+      </main>
+      <neo-ui-modal></neo-ui-modal>
+    </div>
+  </div>
+</div>

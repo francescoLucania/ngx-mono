@@ -1,3 +1,5 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
 @forward 'node_modules/normalize.css/normalize';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/variables/palette/palette';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/core/fonts/fonts';
@@ -6,3 +8,45 @@
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/common/offsets/offsets';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/typography/typography';
 @forward 'node_modules/ngx-neo-ui/assets/styles/theme-provider/base-styles/container/container';
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff2');
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.base-view {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+neo-ui-header {
+  grid-area: header;
+  height: content-box;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  padding-top: 80px;
+
+  @include theme.mq(md) {
+    padding-top: 128px;
+  }
+}
+
+neo-ui-footer {
+  grid-area: footer;
+  height: content-box;
+}

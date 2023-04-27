@@ -8,9 +8,9 @@ import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
-import { CounterComponent } from './views/counter/counter.component';
+import { CounterComponent } from './modules/counter/counter.component';
 import { FooterModule, HeaderModule, ModalModule, IMediaQueriesParams, MEDIA_QUERY_CONFIG } from 'ngx-neo-ui';
-import { HomeComponent } from './views/home/home.component';
+import { HomeComponent } from './modules/home/home.component';
 import { ButtonModule } from '../../../ui/src/lib/components/button/button.module';
 
 const mediaQueriesConfig: IMediaQueriesParams = {

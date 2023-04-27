@@ -1,0 +1,39 @@
+@use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
+
+:host {
+  flex-grow: 1;
+}
+
+.ui-grid {
+  flex-grow: 1;
+
+  @include theme.mq(md) {
+    display: flex;
+  }
+
+  &__navigate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 132px;
+    background: #fff;
+
+    @include theme.mq(md) {
+      width: 250px;
+    }
+  }
+
+  &__container {
+    @include theme.mq(md) {
+      padding-left: 250px;
+      width: 100%;
+    }
+  }
+
+  &__main {
+    @include theme.mq(md) {
+      padding: 32px;
+    }
+  }
+}

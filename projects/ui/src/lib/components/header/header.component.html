@@ -1,5 +1,5 @@
 <header class="site-header" [class.site-header--scroll-mod]="scrolled">
-  <div class="container">
+  <div class="container" [class.container--full-width]="fullWidth">
     <div class="site-header__grid">
       <a [routerLink]="['/home']" class="site-header__logo">
         <img src="../../assets/img/logo.jpg" alt="francescolucania.com" />
@@ -34,7 +34,7 @@
 <ng-template #menu>
   <ol class="site-header__navigate-list">
     <li *ngFor="let item of navigate" class="site-header__navigate-list-item">
-      <a [routerLink]="item.uri" [routerLinkActive]="'is-active'"
+      <a [routerLink]="item.uri" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{ exact: true }"
         ><span>{{ item.name }}</span></a
       >
     </li>

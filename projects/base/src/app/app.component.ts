@@ -10,7 +10,7 @@ export class AppComponent {
   public navigate: IHeaderNavigate[] = [
     { name: 'Home', uri: '' },
     { name: 'Styles', uri: 'components' },
-    { name: 'Components', uri: 'components' },
+    { name: 'UI lib', uri: 'ui-lib' },
     { name: 'Contacts', uri: 'Contacts' },
   ];
 }

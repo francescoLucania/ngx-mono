@@ -8,6 +8,7 @@ import { IHeaderNavigate } from './models/navigate';
 })
 export class HeaderComponent {
   @Input() public navigate: IHeaderNavigate[] = [];
+  @Input() public fullWidth = false;
 
   public scrolled = false;
   public mobileMenuState = false;

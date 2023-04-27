@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './views/counter/counter.component';
-import { HomeComponent } from './views/home/home.component';
+import { CounterComponent } from './modules/counter/counter.component';
+import { HomeComponent } from './modules/home/home.component';
 
 const routes: Routes = [
   {
@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'counter',
     component: CounterComponent,
+  },
+  {
+    path: 'ui-lib',
+    loadChildren: () => import('./modules/ui/ui.module').then(mod => mod.UiModule),
   },
 ];
 
