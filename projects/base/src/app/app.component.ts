@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IHeaderNavigate } from 'ngx-neo-ui/lib/components/header/models/navigate';
+import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 
 @Component({
   selector: 'base-root',
@@ -7,9 +7,9 @@ import { IHeaderNavigate } from 'ngx-neo-ui/lib/components/header/models/navigat
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public navigate: IHeaderNavigate[] = [
+  public navigate: INavigateList[] = [
     { name: 'Home', uri: '' },
-    { name: 'Styles', uri: 'components' },
+    { name: 'Styles', uri: 'styles' },
     { name: 'Components', uri: 'components' },
     { name: 'Contacts', uri: 'Contacts' },
   ];

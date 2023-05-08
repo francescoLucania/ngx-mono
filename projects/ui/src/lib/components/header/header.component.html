@@ -32,11 +32,5 @@
 </header>
 
 <ng-template #menu>
-  <ol class="site-header__navigate-list">
-    <li *ngFor="let item of navigate" class="site-header__navigate-list-item">
-      <a [routerLink]="item.uri" [routerLinkActive]="'is-active'"
-        ><span>{{ item.name }}</span></a
-      >
-    </li>
-  </ol>
+  <neo-ui-navigate-list [navigate]="navigate"></neo-ui-navigate-list>
 </ng-template>

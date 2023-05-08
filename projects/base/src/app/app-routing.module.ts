@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CounterComponent } from './views/counter/counter.component';
-import { HomeComponent } from './views/home/home.component';
+import { HomeComponent } from './views/home/views/home/home.component';
+import { CounterComponent } from './views/counter/views/counter/counter.component';
 
 const routes: Routes = [
   {
@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'counter',
     component: CounterComponent,
+  },
+  {
+    path: 'components',
+    loadChildren: () => import('./views/components/components.module').then(mod => mod.ComponentsModule),
   },
 ];
 

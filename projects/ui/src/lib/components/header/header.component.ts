@@ -1,5 +1,5 @@
 import { Component, HostListener, Input, Renderer2 } from '@angular/core';
-import { IHeaderNavigate } from './models/navigate';
+import { INavigateList } from '../navigate-list/models/navigate';
 
 @Component({
   selector: 'neo-ui-header',
@@ -7,7 +7,7 @@ import { IHeaderNavigate } from './models/navigate';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Input() public navigate: IHeaderNavigate[] = [];
+  @Input() public navigate: INavigateList[] = [];
 
   public scrolled = false;
   public mobileMenuState = false;
