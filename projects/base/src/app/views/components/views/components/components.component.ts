@@ -4,11 +4,11 @@ import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/na
 @Component({
   selector: 'base-components',
   templateUrl: './components.component.html',
-  styleUrls: ['./components.component.scss']
+  styleUrls: ['./components.component.scss'],
 })
 export class ComponentsComponent {
   public formsMenu: INavigateList[] = [
-    {name: 'Button', uri: 'button'},
-    {name: 'Input', uri: 'input'}
+    { name: 'Button', uri: 'button' },
+    { name: 'Input', uri: 'input' },
   ];
 }

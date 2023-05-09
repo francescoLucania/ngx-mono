@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
-import { countSelector, updatedAtSelector, decrease, increase, } from '../../../../reducers/counter';
+import { countSelector, updatedAtSelector, decrease, increase } from '../../../../reducers/counter';
 
 @Component({
   selector: 'base-counter',

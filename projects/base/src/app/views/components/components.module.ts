@@ -7,17 +7,8 @@ import { InputComponent } from './views/input/input.component';
 import { CodeComponent } from './components/code/code.component';
 import { ButtonModule, NavigateListModule } from 'ngx-neo-ui';
 
-
-
 @NgModule({
-  declarations: [
-    ComponentsComponent,
-    ButtonComponent,
-    InputComponent,
-    CodeComponent
-  ],
-  imports: [
-    CommonModule, ComponentsRoutingModule, NavigateListModule, ButtonModule,
-  ],
+  declarations: [ComponentsComponent, ButtonComponent, InputComponent, CodeComponent],
+  imports: [CommonModule, ComponentsRoutingModule, NavigateListModule, ButtonModule],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

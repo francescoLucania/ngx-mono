@@ -16,8 +16,8 @@ const routes: Routes = [
       {
         path: 'input',
         component: InputComponent,
-      }
-    ]
+      },
+    ],
   },
 ];
 

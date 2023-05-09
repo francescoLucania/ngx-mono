@@ -8,9 +8,8 @@ describe('NavigateListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavigateListComponent ]
-    })
-    .compileComponents();
+      declarations: [NavigateListComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavigateListComponent);
     component = fixture.componentInstance;

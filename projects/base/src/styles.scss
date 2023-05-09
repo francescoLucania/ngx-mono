@@ -11,7 +11,6 @@
 
 @use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
 
-
 .app {
   display: grid;
   grid-template-areas:
@@ -31,11 +30,9 @@ main {
   display: flex;
   width: 100%;
 
-
   > *:not(router-outlet) {
     flex-grow: 1;
   }
-
 }
 
 neo-ui-footer {

@@ -1,6 +1,7 @@
-<ol class="navigate-list" [ngClass]="{'navigate-list--vertical': type === 'vertical'}">
+<ol class="navigate-list" [ngClass]="{ 'navigate-list--vertical': type === 'vertical' }">
   <li *ngFor="let item of navigate" class="navigate-list__item">
     <a [routerLink]="item.uri" [routerLinkActive]="'is-active'" [routerLinkActiveOptions]="{ exact: true }"
-    ><span>{{ item.name }}</span></a>
+      ><span>{{ item.name }}</span></a
+    >
   </li>
 </ol>

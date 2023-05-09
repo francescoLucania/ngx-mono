@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'base-code',
   templateUrl: './code.component.html',
-  styleUrls: ['./code.component.scss']
+  styleUrls: ['./code.component.scss'],
 })
-export class CodeComponent {
-
-}
+export class CodeComponent {}

@@ -8,4 +8,4 @@ import { NavigateListComponent } from './navigate-list.component';
   imports: [CommonModule, RouterModule],
   exports: [NavigateListComponent],
 })
-export class NavigateListModule { }
+export class NavigateListModule {}
