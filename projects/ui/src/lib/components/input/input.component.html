@@ -1,1 +1,24 @@
-<p>input works!</p>
+<div
+  class="neo-ui-input"
+  [ngClass]="{'neo-ui-input--multiline': multiline, 'neo-ui-input--invalid': invalid, 'neo-ui-input--disable': disabled}">
+  <input class="neo-ui-input__tag"
+         #input *ngIf="!multiline"
+         [attr.name]="name"
+         [attr.type]="type || 'text'"
+         [attr.tabIndex]="tabIndex"
+         [attr.id]="id ? id : null"
+         [attr.minlength]="minlength"
+         [attr.maxlength]="maxlength"
+         [attr.placeholder]="placeholder"
+         [attr.autocomplete]="autocomplete === undefined ? null : autocomplete"
+         [disabled]='disabled'
+         [(ngModel)]="value"
+         [readOnly]="readOnly"
+         [class.invalid]="invalidDisplayed"
+         [class.focused]="focused"
+         (change)="handleChange()"
+         (input)="handleInput($event)"
+         (blur)="notifyBlurEvent($event)"
+         (focus)="notifyFocusEvent($event)"
+         (keyup.enter)="forceChange()"/>
+</div>

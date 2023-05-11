@@ -9,16 +9,11 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class HelperService {
-  private toClipboardCallback: any;
-  private reloadAbsoluteInternalLinks = false;
-  private deviceType: 'mob' | 'desk' | 'tab' | null = null;
 
   constructor(
     private router: Router,
     private titleService: Title,
     private meta: Meta,
-    // @ts-ignore
-    @Inject(DOCUMENT) private dom
   ) {
 
   }

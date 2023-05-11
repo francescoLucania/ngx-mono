@@ -1,3 +1,45 @@
 <section>
-  <h2 class="heading-h4">ButtonComponent</h2>
+  <h2 class="heading-h3 color-brand">InputComponent</h2>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Import</h4>
+    <div class="mt-16">
+      <base-code>
+        <code> {{ "import { InputModule } from 'ngx-neo-ui';" }} </code>
+      </base-code>
+    </div>
+  </section>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Theme</h4>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Basic</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Input Placeholder'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Invalid</h4>
+      <div class="mt-16">
+        <neo-ui-input
+          [placeholder]="'Input Placeholder'"
+          [invalid]="true"
+        ></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Disabled</h4>
+      <div class="mt-16">
+        <neo-ui-input
+          [placeholder]="'Input Placeholder'"
+          [disabled]="true"
+        ></neo-ui-input>
+      </div>
+    </article>
+  </section>
+
+
 </section>

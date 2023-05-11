@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { INavigateList } from 'ngx-neo-ui/lib/components/navigate-list/models/navigate';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'base-components',
   templateUrl: './components.component.html',
   styleUrls: ['./components.component.scss'],

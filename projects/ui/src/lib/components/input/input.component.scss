@@ -1,0 +1,33 @@
+input {
+  &[type='tel'] {
+     padding: 0;
+   }
+}
+
+.neo-ui-input {
+
+  &--invalid {
+    .neo-ui-input__tag {
+      border-color: var(--colorError);
+    }
+  }
+
+  &--disable {
+    .neo-ui-input__tag {
+      opacity: .4;
+    }
+  }
+
+  &__tag {
+    padding: 8px;
+    width: 100%;
+    border-radius: var(--baseBorderRadius);
+    border: 2px solid var(--colorBase);
+    line-height: 1;
+
+    &:focus {
+      outline-style: solid;
+      outline-color: var(--colorBrand);
+    }
+  }
+}

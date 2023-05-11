@@ -16,7 +16,7 @@ import { HelperService } from '../../services/helper';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'neo-ui-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css'],
+  styleUrls: ['./input.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => InputComponent),
@@ -32,8 +32,8 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit, DoCheck
 
   // focus и blur искусственные, одноименные с естественными, остальные события просто всплывают
   @Output() public cleared = new EventEmitter<void>();
-  @Output() public focus = new EventEmitter<any>();
-  @Output() public blur = new EventEmitter<any>();
+  @Output() public focus = new EventEmitter<FocusEvent>();
+  @Output() public blur = new EventEmitter<FocusEvent>();
   @Output() public selectSuggest = new EventEmitter<Suggest | SuggestItem>();
   // эти события не перехватываются и всплывают:
   // input, change, keydown, keyup, keypress, click, dblclick, touchstart, touchend,
@@ -45,11 +45,12 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit, DoCheck
   @Input() public type?: string; // password, email, number итд
   @Input() public minlength?: string | number;
   @Input() public maxlength?: string | number;
+  @Input() public autocomplete: boolean;
   @Input() public placeholder?: string;
   @Input() public tabIndex?: string | number;
   @Input() public ariaLabel?: string;
   @Input() public readOnly?: boolean;
-  @Input() public disabled?: boolean;
+  @Input() public disabled = false;
   @Input() public multiline?: boolean;
   @Input() public commitOnInput = true;  // коммитить по input или по change
   @Input() public invalid = false;
@@ -172,21 +173,25 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit, DoCheck
     this.check();
   }
 
+  public forceChange() {
+    this.check();
+  }
+
   public registerOnTouched(fn: any) {
     this.onTouchedCallback = fn;
   }
 
-  public selectSuggestItem(item: SuggestItem): void {
-    this.selectSuggest.emit(item);
+  public notifyBlurEvent(event: FocusEvent) {
+    this.blur.emit(event)
   }
 
-  public editSuggestList(suggest: Suggest): void {
-    suggest.isEdit = true;
-    this.selectSuggest.emit(suggest);
+  public notifyFocusEvent(event: FocusEvent) {
+    this.focus.emit(event)
   }
 
   public check() {
-    console.log('Проверки');
+    console.log('check');
   }
   protected commit(value: string): void {}
+
 }
