@@ -54,6 +54,7 @@ export class InputComponent implements OnInit, OnChanges, AfterViewInit, DoCheck
   @Input() public multiline?: boolean;
   @Input() public commitOnInput = true;  // коммитить по input или по change
   @Input() public invalid = false;
+  @Input() public size: 'small' | 'base' | 'large' = 'base'
 
   @Input()
   public set id(value: string) {

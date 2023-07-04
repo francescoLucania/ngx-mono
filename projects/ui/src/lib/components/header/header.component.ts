@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Input, Renderer2 } from '@angular/core';
 import { INavigateList } from '../navigate-list/models/navigate';
 
 @Component({
@@ -8,12 +8,16 @@ import { INavigateList } from '../navigate-list/models/navigate';
 })
 export class HeaderComponent {
   @Input() public navigate: INavigateList[] = [];
+  @Input() public logoPath = '../../assets/img/logo.jpg';
 
   public scrolled = false;
   public mobileMenuState = false;
   public mobileMenuStateClose = false;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(
+    private renderer: Renderer2,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   @HostListener('window:scroll', ['$event'])
   public onWindowScroll() {
@@ -36,5 +40,6 @@ export class HeaderComponent {
     } else {
       this.mobileMenuState = !this.mobileMenuState;
     }
+    this.cdr.detectChanges();
   }
 }

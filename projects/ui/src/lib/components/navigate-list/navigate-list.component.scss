@@ -27,7 +27,7 @@
   }
 
   &__item {
-    @include typography.text-plain-large();
+    @include typography.text-base-large();
 
     display: flex;
 

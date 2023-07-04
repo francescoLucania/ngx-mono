@@ -11,7 +11,7 @@
   </section>
 
   <section class="mt-24">
-    <h4 class="heading-h4">Theme</h4>
+    <h4 class="heading-h4">State</h4>
 
     <article class="mt-24">
       <h4 class="heading-h5">Basic</h4>
@@ -40,6 +40,58 @@
       </div>
     </article>
   </section>
+
+  <section class="mt-24">
+    <h4 class="heading-h4">Sizes</h4>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Small</h4>
+      <div class="mt-16">
+        <neo-ui-input [size]="'small'" [placeholder]="'Small Size (--fontSizeSmall)'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Basic</h4>
+      <div class="mt-16">
+        <neo-ui-input [placeholder]="'Base Size (--fontSizeBase)'"></neo-ui-input>
+      </div>
+    </article>
+
+    <article class="mt-24">
+      <h4 class="heading-h5">Large</h4>
+      <div class="mt-16">
+        <neo-ui-input [size]="'large'" [placeholder]="'Large Size (--fontSizeLarge)'"></neo-ui-input>
+      </div>
+    </article>
+  </section>
+
+  <form [formGroup]="form" (submit)='submit()' class="mt-48" style="max-height: 420px">
+    <h4 class="heading-h5">Example</h4>
+    <div class="mt-16">
+      <div>
+        <neo-ui-input
+          formControlName='login'
+          [size]="'large'"
+          [placeholder]="'login'"
+          [invalid]="!login.pristine && login.invalid"
+        ></neo-ui-input>
+      </div>
+      <div class="mt-16">
+        <neo-ui-input
+          formControlName='password'
+          [type]="'password'"
+          [size]="'large'"
+          [placeholder]="'Password'"
+          [invalid]="!password.pristine && password.invalid"
+        ></neo-ui-input>
+      </div>
+      <div class='mt-24'>
+        <neo-ui-button [buttonType]="'submit'" [disabled]='form.invalid'> Submit </neo-ui-button>
+      </div>
+
+    </div>
+  </form>
 
 
 </section>

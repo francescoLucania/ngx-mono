@@ -22,24 +22,24 @@
   }
 }
 
-@mixin text-plain-large($font-weight: 400) {
+@mixin text-base-small($font-weight: 400) {
   @include text;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: var(--fontSizeSmall);
+  line-height: var(--lineHeightSmall);
   font-weight: $font-weight;
 }
 
-@mixin text-plain($font-weight: 400) {
+@mixin text-base($font-weight: 400) {
   @include text;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--fontSizeBase);
+  line-height: var(--lineHeightBase);
   font-weight: $font-weight;
 }
 
-@mixin text-plain-small($font-weight: 400) {
+@mixin text-base-large($font-weight: 400) {
   @include text;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--fontSizeLarge);
+  line-height: var(--lineHeightLarge);
   font-weight: $font-weight;
 }
 
@@ -82,12 +82,12 @@
   line-height: 24px;
 }
 
-.text-plain {
-  @include text-plain;
+.text-base {
+  @include text-base;
 }
 
-.text-plain-small {
-  @include text-plain-small;
+.text-base-small {
+  @include text-base-small;
 }
 
 .text-helper {

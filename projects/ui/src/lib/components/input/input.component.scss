@@ -15,6 +15,7 @@ input {
   &--disable {
     .neo-ui-input__tag {
       opacity: .4;
+      cursor: not-allowed;
     }
   }
 
@@ -23,11 +24,20 @@ input {
     width: 100%;
     border-radius: var(--baseBorderRadius);
     border: 2px solid var(--colorBase);
+    font-size: var(--fontSizeBase);
     line-height: 1;
 
     &:focus {
       outline-style: solid;
       outline-color: var(--colorBrand);
+    }
+
+    &--size-small {
+      font-size: var(--fontSizeSmall);
+    }
+
+    &--size-large {
+      font-size: var(--fontSizeLarge);
     }
   }
 }
