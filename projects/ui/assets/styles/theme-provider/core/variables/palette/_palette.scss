@@ -1,9 +1,11 @@
 $colorBase: #121314 !default;
-$colorLighte: rgba(#121314, 0.8) !default;
+$colorLight: rgba(#121314, 0.8) !default;
 $colorLighter: rgba(#121314, 0.6) !default;
 $colorLightest: rgba(#121314, 0.4) !default;
 
 $colorBrand: #5409ff !default;
+$colorSound: #9280bc !default;
+$colorSoundLight: rgba(#9280bc, .6) !default;
 $colorSound: #9280bc !default;
 $bgColorMode: #e7e7e7 !default;
 
@@ -14,12 +16,13 @@ $accessibilityBackground: #fef0cc !default;
 
 :root {
   --colorBase: #{$colorBase};
-  --colorLighte: #{$colorLighte};
+  --colorLight: #{$colorLight};
   --colorLighter: #{$colorLighter};
   --colorLightest: #{$colorLightest};
 
   --colorBrand: #{$colorBrand};
   --colorSound: #{$colorSound};
+  --colorSoundLight: #{$colorSoundLight};
   --bgColorMode: #{$bgColorMode};
 
   --accessibilityBorder: #{$accessibilityBorder};

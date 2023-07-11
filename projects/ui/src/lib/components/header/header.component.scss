@@ -82,6 +82,28 @@
       height: 48px;
     }
 
+    &:focus-visible {
+      position: relative;
+      display: block;
+      outline: none;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 100%;
+        width: calc(100% + 5px);
+        transform: translate(-50%, -50%);
+        padding: 0 8px;
+        border: 3px solid var(--accessibilityBorder);
+        border-radius: var(--baseBorderRadius);
+        background: var(--accessibilityBackground);
+      }
+    }
+
     > img {
       display: block;
       width: 100%;

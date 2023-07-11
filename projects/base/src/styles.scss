@@ -10,7 +10,11 @@
 @forward './assets/styles/view/view';
 
 @use 'node_modules/ngx-neo-ui/assets/styles/theme-provider/theme_provider' as theme;
-
+*,
+*::before,
+*::after, {
+  box-sizing: border-box;
+}
 .app {
   display: grid;
   grid-template-areas:

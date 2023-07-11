@@ -11,5 +11,6 @@ export class ComponentsComponent {
   public formsMenu: INavigateList[] = [
     { name: 'Button', uri: 'button' },
     { name: 'Input', uri: 'input' },
+    { name: 'Radio', uri: 'radio' },
   ];
 }

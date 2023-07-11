@@ -5,7 +5,9 @@
 @use 'typography/typography' as typography;
 @use '../../../styles/theme-provider/core/resets/button' as button;
 
-* {
+*,
+*::before,
+*::after, {
   box-sizing: border-box;
 }
 
